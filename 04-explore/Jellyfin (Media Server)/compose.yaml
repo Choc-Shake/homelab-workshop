@@ -1,0 +1,13 @@
+# Jellyfin: see README.md in this folder
+
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    ports:
+      - "8096:8096"
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - ./media:/media:ro     # your videos, read-only
+    restart: unless-stopped

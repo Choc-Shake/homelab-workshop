@@ -1,0 +1,18 @@
+# Minecraft: see README.md in this folder
+
+services:
+  minecraft:
+    image: itzg/minecraft-server:latest
+    container_name: minecraft
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"           # agrees to the Minecraft EULA: https://aka.ms/MinecraftEULA
+      TYPE: "PAPER"          # faster server with plugin support. VANILLA works too.
+      MEMORY: "2G"
+      MOTD: "Level Up!! home lab server"
+    volumes:
+      - ./data:/data
+    tty: true
+    stdin_open: true
+    restart: unless-stopped

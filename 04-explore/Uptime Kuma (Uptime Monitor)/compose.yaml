@@ -1,0 +1,13 @@
+# Uptime Kuma: see README.md in this folder
+
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:2
+    container_name: uptime-kuma
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./data:/app/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # so it can reach apps on your laptop (needed on Linux)
+    restart: unless-stopped

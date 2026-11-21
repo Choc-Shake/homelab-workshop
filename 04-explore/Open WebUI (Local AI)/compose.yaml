@@ -1,0 +1,26 @@
+# Open WebUI: see README.md in this folder
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    volumes:
+      - ollama:/root/.ollama      # downloaded models
+    restart: unless-stopped
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    ports:
+      - "3010:8080"
+    environment:
+      OLLAMA_BASE_URL: "http://ollama:11434"   # containers in the same file find each other by name
+    volumes:
+      - open-webui:/app/backend/data
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+volumes:
+  ollama:
+  open-webui:

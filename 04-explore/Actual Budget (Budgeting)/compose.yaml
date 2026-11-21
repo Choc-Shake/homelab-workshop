@@ -1,0 +1,11 @@
+# Actual Budget: see README.md in this folder
+
+services:
+  actual:
+    image: actualbudget/actual-server:latest
+    container_name: actual
+    ports:
+      - "5006:5006"
+    volumes:
+      - ./actual-data:/data
+    restart: unless-stopped

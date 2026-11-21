@@ -1,0 +1,19 @@
+# The two containers from the crash course, written as a compose file.
+# docker compose up -d to start, docker compose down to stop.
+
+services:
+  my-site:
+    image: nginx:alpine
+    container_name: my-site
+    ports:
+      - "8088:80"                          # http://localhost:8088
+    volumes:
+      - ./site:/usr/share/nginx/html:ro    # your site folder, where nginx looks for pages
+    restart: unless-stopped
+
+  it-tools:
+    image: corentinth/it-tools
+    container_name: it-tools
+    ports:
+      - "8081:80"                          # http://localhost:8081
+    restart: unless-stopped

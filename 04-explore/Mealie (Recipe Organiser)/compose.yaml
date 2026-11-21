@@ -1,0 +1,18 @@
+# Mealie: see README.md in this folder
+
+services:
+  mealie:
+    image: ghcr.io/mealie-recipes/mealie:latest
+    container_name: mealie
+    ports:
+      - "9925:9000"
+    environment:
+      TZ: "America/Edmonton"
+      BASE_URL: "http://localhost:9925"
+      ALLOW_SIGNUP: "false"
+    volumes:
+      - mealie-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  mealie-data:

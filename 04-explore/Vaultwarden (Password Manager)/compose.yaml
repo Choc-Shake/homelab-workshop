@@ -1,0 +1,13 @@
+# Vaultwarden: see README.md in this folder
+
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    ports:
+      - "127.0.0.1:8000:80"   # only reachable from this laptop
+    environment:
+      DOMAIN: "http://localhost:8000"
+    volumes:
+      - ./vw-data:/data
+    restart: unless-stopped

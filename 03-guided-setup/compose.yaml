@@ -1,0 +1,25 @@
+# Pi-hole, based on the official example: https://github.com/pi-hole/docker-pi-hole
+#
+# A few changes for running it on a laptop instead of a dedicated server:
+#   - DNS only listens on 127.0.0.1, so it doesn't clash with systemd-resolved on Linux
+#     and nobody else on the Wi-Fi can use it
+#   - the web dashboard is on port 8080 instead of 80, and HTTPS is left off
+
+services:
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    ports:
+      - "127.0.0.1:53:53/tcp"    # DNS
+      - "127.0.0.1:53:53/udp"    # DNS
+      - "8080:80/tcp"            # dashboard: http://localhost:8080/admin
+    environment:
+      TZ: "America/Edmonton"
+      FTLCONF_webserver_api_password: "change-me-please"   # dashboard password, change it
+      FTLCONF_dns_listeningMode: "ALL"                     # needed when running in Docker's default network
+      # Where Pi-hole sends lookups it doesn't block. If campus Wi-Fi blocks outside DNS,
+      # put the campus DNS server here instead.
+      # FTLCONF_dns_upstreams: "1.1.1.1;9.9.9.9"
+    volumes:
+      - ./etc-pihole:/etc/pihole   # settings and stats
+    restart: unless-stopped

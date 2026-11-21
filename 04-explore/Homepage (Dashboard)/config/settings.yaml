@@ -1,0 +1,12 @@
+# Docs: https://gethomepage.dev/configs/settings/
+title: My Home Lab
+theme: dark
+color: slate
+headerStyle: clean
+layout:
+  Workshop:
+    style: row
+    columns: 3
+  Explore:
+    style: row
+    columns: 3

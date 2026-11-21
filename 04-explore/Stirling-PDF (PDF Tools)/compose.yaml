@@ -1,0 +1,9 @@
+# Stirling-PDF: see README.md in this folder
+
+services:
+  stirling-pdf:
+    image: stirlingtools/stirling-pdf:latest
+    container_name: stirling-pdf
+    ports:
+      - "8082:8080"
+    restart: unless-stopped

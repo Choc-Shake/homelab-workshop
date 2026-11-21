@@ -1,0 +1,15 @@
+# Homepage: see README.md in this folder
+
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./config:/app/config
+      # Lets Homepage see your containers. Read the notes in the README before turning this on.
+      # - /var/run/docker.sock:/var/run/docker.sock:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # so it can reach apps on your laptop (needed on Linux)
+    restart: unless-stopped

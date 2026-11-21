@@ -1,0 +1,26 @@
+# Facilitator notes and backup plan (kept local, not published)
+facilitator/
+
+# Secrets
+.env
+
+# App data that gets created when you run things
+03-guided-setup/etc-pihole/
+03-guided-setup/data/
+04-explore/*/config/
+!04-explore/Homepage (Dashboard)/config/
+04-explore/Homepage (Dashboard)/config/logs/
+04-explore/*/cache/
+04-explore/*/data/
+04-explore/*/media/
+04-explore/*/music/
+04-explore/*/audiobooks/
+04-explore/*/podcasts/
+04-explore/*/metadata/
+04-explore/*/vw-data/
+04-explore/*/actual-data/
+04-explore/*/library/
+04-explore/*/etc-pihole/
+
+.DS_Store
+Thumbs.db

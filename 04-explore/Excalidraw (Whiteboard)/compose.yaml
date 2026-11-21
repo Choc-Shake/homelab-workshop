@@ -1,0 +1,9 @@
+# Excalidraw: see README.md in this folder
+
+services:
+  excalidraw:
+    image: excalidraw/excalidraw:latest
+    container_name: excalidraw
+    ports:
+      - "3020:80"
+    restart: unless-stopped

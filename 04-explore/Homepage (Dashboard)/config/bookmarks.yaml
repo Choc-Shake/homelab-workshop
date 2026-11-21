@@ -1,0 +1,12 @@
+# Docs: https://gethomepage.dev/configs/bookmarks/
+- School:
+    - eClass:
+        - abbr: EC
+          href: https://eclass.srv.ualberta.ca
+- Learn:
+    - awesome-selfhosted:
+        - abbr: AS
+          href: https://awesome-selfhosted.net
+    - Docker docs:
+        - abbr: DD
+          href: https://docs.docker.com

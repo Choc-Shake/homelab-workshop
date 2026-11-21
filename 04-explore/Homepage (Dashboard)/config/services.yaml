@@ -1,0 +1,35 @@
+# Docs: https://gethomepage.dev/configs/services/
+# href is the link your browser opens, so it uses localhost.
+# siteMonitor is what the container checks, so it uses host.docker.internal
+# (inside a container, localhost means the container itself).
+# Remove apps you aren't running. Spaces only, no tabs.
+
+- Workshop:
+    - Pi-hole:
+        icon: pi-hole.png
+        href: http://localhost:8080/admin
+        siteMonitor: http://host.docker.internal:8080/admin
+        description: Ad-blocking DNS
+    - My site:
+        icon: nginx.png
+        href: http://localhost:8088
+        siteMonitor: http://host.docker.internal:8088
+        description: Crash-course web page
+
+- Explore:
+    - Immich:
+        icon: immich.png
+        href: http://localhost:2283
+        siteMonitor: http://host.docker.internal:2283
+    - Jellyfin:
+        icon: jellyfin.png
+        href: http://localhost:8096
+        siteMonitor: http://host.docker.internal:8096
+    - Uptime Kuma:
+        icon: uptime-kuma.png
+        href: http://localhost:3001
+        siteMonitor: http://host.docker.internal:3001
+    - IT-Tools:
+        icon: it-tools.png
+        href: http://localhost:8081
+        siteMonitor: http://host.docker.internal:8081
