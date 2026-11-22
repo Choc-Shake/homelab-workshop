@@ -47,21 +47,19 @@ If not, click **Code → Download ZIP** on the GitHub page and unzip it somewher
 
 ## 3. Download the images
 
-Make sure Docker is running first, then run the script from inside the `homelab-workshop` folder.
-
-Mac / Linux:
+Make sure Docker is running, then paste these into a terminal one at a time. Each `docker pull` downloads an image from Docker Hub, the same way you'd download an app from an app store.
 
 ```bash
-./scripts/prepull.sh
+docker pull hello-world
+docker pull corentinth/it-tools
+docker pull nginx:alpine
+docker pull pihole/pihole:latest
+docker pull louislam/uptime-kuma:2
 ```
 
-Windows (PowerShell):
+You'll notice we don't give you a script that does this for you. Running scripts from the internet without reading them first is a bad habit, even from people you trust. Every command in this workshop is short enough to read before you run it, so please do.
 
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\prepull.ps1
-```
-
-If there are apps in [04 Explore](04-explore/) you already know you want to try, pull those too while you're on home internet. Go into the app's folder and run `docker compose pull`.
+If there are apps in [04 Explore](04-explore/) you already know you want to try, pull those too while you're on home internet: go into the app's folder and run `docker compose pull`. Have a look at its `compose.yaml` first so you know what you're downloading.
 
 ## 4. Make sure it works
 
@@ -80,7 +78,6 @@ The first one should print "Hello from Docker!" and the second should print a ve
 | `permission denied ... docker.sock` (Linux) | Run the `usermod` command above, then log out and back in. |
 | "WSL 2 installation is incomplete" (Windows) | Open PowerShell as admin, run `wsl --install`, restart. |
 | "Virtualization not enabled" | Turn on VT-x / AMD-V in your BIOS. |
-| The Mac/Linux script won't run | `chmod +x scripts/prepull.sh` and try again. |
 
 Still stuck? Post in #workshop-help with your OS, the command, and a screenshot.
 

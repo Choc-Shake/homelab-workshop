@@ -4,7 +4,13 @@ A Level Up!! workshop from the Computer Engineering Club at the University of Al
 
 This is an intro to servers and home labs, using Docker.
 
-We'll cover what a server actually is, do a quick Docker crash course, and then set up **Pi-hole** together (a DNS server that blocks ads). After that you can try any of the other apps in this repo on your own.
+Here's how it goes:
+
+1. A quick lesson on what servers are and how they're used.
+2. Docker and Docker Desktop: what containers are, and how companies use them.
+3. We set up **Pi-hole** together (a DNS server that blocks ads), and talk about what else you could run.
+4. You pick some apps from the explore list and set them up yourself. We'll walk around and help.
+5. You leave with resources to keep going.
 
 ## Before you come
 
@@ -36,7 +42,6 @@ crash-course/          files for the crash course exercises
 05-resources.md
 06-learn-more.md
 CHEATSHEET.md
-scripts/               pre-download scripts for Mac/Linux and Windows
 ```
 
 ## Ports

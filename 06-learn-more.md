@@ -119,6 +119,7 @@ Actually test restoring from your backup at some point. Plenty of people find ou
 - [ ] `.env` files and secrets aren't in Git
 - [ ] Backups are running, and you've tested restoring one
 - [ ] You know how to check logs with `docker compose logs`
+- [ ] You only use images from the official project or a verified publisher, and you read install scripts and compose files before running them (never `curl ... | bash` without looking)
 
 ## More Docker
 

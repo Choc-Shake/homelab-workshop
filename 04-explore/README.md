@@ -55,7 +55,7 @@ Small apps like IT-Tools, Excalidraw and Uptime Kuma are fine to download on cam
 
 There are thousands of self-hosted apps. https://awesome-selfhosted.net and https://selfh.st/apps/ are good places to look. Once you find one:
 
-1. Find its official Docker or Compose instructions. They're usually in the README or docs under Installation.
+1. Find its official Docker or Compose instructions. They're usually in the README or docs under Installation. Use the image the project itself publishes, not a random one with a similar name, and read the compose file before you run it.
 2. Make a new folder and paste the example into a `compose.yaml`.
 3. Check the ports (pick a free one for the left side), the volumes (where will its data go?) and any environment variables (passwords, timezone).
 4. `docker compose up -d`, and `docker compose logs -f` if it doesn't come up.

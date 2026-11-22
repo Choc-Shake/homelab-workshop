@@ -75,6 +75,17 @@ Docker isn't just a hobby thing. It's a normal part of how software gets built a
 
 The commands we use today are the same ones people use at work.
 
+## A quick tour of Docker Desktop
+
+Open Docker Desktop. Everything you do in the terminal today also shows up here, which makes it a good way to see what's going on.
+
+- **Containers**: everything that's running or stopped. You can start, stop, delete, see logs and open a terminal inside any of them.
+- **Images**: what you've downloaded. You'll see `hello-world`, `nginx` and the others you pulled at home.
+- **Volumes**: Docker-managed storage for data that needs to stick around.
+- **Docker Hub search** (top bar): browse and pull images without the terminal. Check who publishes an image before pulling it. Look for "Docker Official Image" or "Verified Publisher", or the project's own account.
+
+We'll mostly use the terminal because that's what you'd use on a real server (which has no screen), but keep Docker Desktop open beside it.
+
 ## Hands-on
 
 Open a terminal (PowerShell on Windows, Terminal on Mac) and make sure Docker Desktop says Engine running.
